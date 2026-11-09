@@ -1,0 +1,210 @@
+
+<div class="abstract-mark backend-visual" aria-hidden="true">
+  <svg viewBox="0 0 700 560" role="presentation">
+    <defs>
+      <linearGradient id="backend-metal" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#fff"/>
+        <stop offset=".45" stop-color="#555"/>
+        <stop offset=".7" stop-color="#ddd"/>
+        <stop offset="1" stop-color="#333"/>
+      </linearGradient>
+      <filter id="backend-glow">
+        <feGaussianBlur stdDeviation="4"/>
+      </filter>
+      <pattern id="backend-grid" width="28" height="28"
+        patternUnits="userSpaceOnUse">
+        <path d="M28 0H0V28" fill="none"
+          stroke="#888" stroke-width=".5" opacity=".15"/>
+      </pattern>
+    </defs>
+
+    <rect width="700" height="560" fill="url(#backend-grid)"/>
+
+    <!-- Architecture connections -->
+    <g class="network-lines" fill="none" stroke="#777"
+      stroke-width="1" opacity=".55">
+      <path d="M70 105 H180 L255 185"/>
+      <path d="M630 105 H520 L445 185"/>
+      <path d="M55 280 H205 L260 280"/>
+      <path d="M645 280 H495 L440 280"/>
+      <path d="M100 440 H210 L270 365"/>
+      <path d="M600 440 H490 L430 365"/>
+      <path d="M350 45 V145 M350 415 V510"/>
+      <path d="M180 105 L180 65 H280"/>
+      <path d="M520 105 V65 H420"/>
+    </g>
+
+    <!-- Animated data packets -->
+    <g fill="#fff" class="data-packets">
+      <circle r="3">
+        <animateMotion dur="4s" repeatCount="indefinite"
+          path="M70 105 H180 L255 185"/>
+      </circle>
+      <circle r="3">
+        <animateMotion dur="5s" repeatCount="indefinite"
+          path="M630 105 H520 L445 185"/>
+      </circle>
+      <circle r="3">
+        <animateMotion dur="4.5s" repeatCount="indefinite"
+          path="M55 280 H205 L260 280"/>
+      </circle>
+      <circle r="3">
+        <animateMotion dur="5.5s" repeatCount="indefinite"
+          path="M600 440 H490 L430 365"/>
+      </circle>
+    </g>
+
+    <!-- Central architecture -->
+    <g class="core-cube" fill="none"
+      stroke="url(#backend-metal)" stroke-width="2.5"
+      stroke-linejoin="round">
+      <path d="M350 145 L465 212 L350 280 L235 212 Z"/>
+      <path d="M235 212 V345 L350 415 L465 345 V212"/>
+      <path d="M350 280 V415"/>
+      <path d="M280 238 L350 279 L420 238"/>
+      <path d="M280 238 V318 L350 360 L420 318 V238"/>
+      <path d="M350 279 V360"/>
+    </g>
+
+    <!-- Core glow -->
+    <path d="M350 145 L465 212 L350 280 L235 212 Z"
+      fill="none" stroke="#fff" stroke-width="5"
+      opacity=".18" filter="url(#backend-glow)"/>
+
+    <!-- Central terminal -->
+    <g fill="#eee" font-family="monospace" font-size="13">
+      <text x="315" y="265">&lt;/&gt;</text>
+      <text x="316" y="300" font-size="9">CORE</text>
+    </g>
+
+    <!-- Nodes -->
+    <g fill="#ddd" class="network-nodes">
+      <circle cx="70" cy="105" r="4"/>
+      <circle cx="630" cy="105" r="4"/>
+      <circle cx="55" cy="280" r="4"/>
+      <circle cx="645" cy="280" r="4"/>
+      <circle cx="100" cy="440" r="4"/>
+      <circle cx="600" cy="440" r="4"/>
+      <circle cx="350" cy="45" r="3"/>
+      <circle cx="350" cy="510" r="3"/>
+    </g>
+
+    <!-- Technology labels -->
+    <g class="tech-labels" font-family="monospace"
+      fill="#aaa" font-size="11">
+      <text x="45" y="85">PHP / LARAVEL</text>
+      <text x="535" y="85">REST / gRPC</text>
+      <text x="35" y="260">POSTGRESQL</text>
+      <text x="570" y="260">REDIS / SQL</text>
+      <text x="65" y="465">DOCKER / LINUX</text>
+      <text x="535" y="465">RABBITMQ</text>
+      <text x="300" y="30">API GATEWAY</text>
+      <text x="290" y="535">CI/CD PIPELINE</text>
+    </g>
+
+    <!-- Secondary engineering annotations -->
+    <g fill="#666" font-family="monospace" font-size="9">
+      <text x="180" y="130">SOLID</text>
+      <text x="480" y="130">DDD</text>
+      <text x="175" y="390">ACID</text>
+      <text x="475" y="390">CQRS</text>
+      <text x="270" y="105">MICROSERVICES</text>
+      <text x="275" y="450">EVENT-DRIVEN</text>
+      <text x="85" y="325">PHPUNIT</text>
+      <text x="555" y="325">NGINX</text>
+      <text x="85" y="185">COMPOSER</text>
+      <text x="555" y="185">GRAPHQL</text>
+    </g>
+
+    <!-- Scanning ring -->
+    <ellipse class="scan-ring" cx="350" cy="280"
+      rx="220" ry="165" fill="none"
+      stroke="#888" stroke-width=".8"
+      stroke-dasharray="3 9" opacity=".45"/>
+
+    <g fill="#777" font-family="monospace" font-size="9">
+      <text x="20" y="25">SYS.ARCH / 001</text>
+      <text x="570" y="25">STATUS: ACTIVE</text>
+      <text x="20" y="545">DATA FLOW VISUALIZATION</text>
+      <text x="570" y="545">BUILD: 001</text>
+    </g>
+  </svg>
+
+  <span class="mark-coordinate">FIG. 004 / BACKEND ECOSYSTEM</span>
+</div>
+
+<style>
+.backend-visual {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin-inline: auto;
+  overflow: hidden;
+}
+
+.backend-visual svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.backend-visual .network-lines {
+  animation: network-pulse 5s ease-in-out infinite alternate;
+}
+
+.backend-visual .data-packets circle {
+  filter: drop-shadow(0 0 5px #fff);
+}
+
+.backend-visual .core-cube {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: core-breathe 5s ease-in-out infinite;
+}
+
+.backend-visual .tech-labels {
+  animation: labels-in 1.5s ease-out both;
+}
+
+.backend-visual .scan-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: scan-rotate 35s linear infinite;
+}
+
+.backend-visual .network-nodes circle {
+  animation: node-pulse 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes network-pulse {
+  from { opacity: .25; }
+  to { opacity: .8; }
+}
+
+@keyframes core-breathe {
+  0%, 100% { opacity: .8; }
+  50% { opacity: 1; }
+}
+
+@keyframes labels-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scan-rotate {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes node-pulse {
+  from { opacity: .35; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .backend-visual *,
+  .backend-visual *::before,
+  .backend-visual *::after {
+    animation: none !important;
+  }
+}
+</style>

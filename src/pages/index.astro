@@ -1,0 +1,120 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import AbstractMark from "../components/AbstractMark.astro";
+import { resume } from "../data/resume";
+---
+<MainLayout>
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Эмиль Аюпов — наверх">/emil.dev</a>
+    <nav aria-label="Основная навигация">
+      <a href="#about">Обо мне</a>
+      <a href="#experience">Опыт</a>
+      <a href="#projects">Проекты</a>
+      <a href="#skills">Навыки</a>
+      <a href="#education">Образование</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+    <a class="header-contact" href="#contact">Связаться <span>↗</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="hero-copy">
+        <p class="eyebrow" data-hero><span class="eyebrow-line"></span> PHP BACKEND DEVELOPER <span class="eyebrow-muted">/ ОРЕНБУРГ, RU</span></p>
+        <h1 data-hero>Emil<br /><span>Ayupov.</span></h1>
+        <p class="hero-description" data-hero>{resume.intro}</p>
+        <div class="hero-actions" data-hero>
+          <a class="button button-light" href="#projects">Смотреть проекты <span>↗</span></a>
+          <a class="text-link" href="#contact">Связаться со мной <span>↗</span></a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <AbstractMark />
+        <div class="experience-stamp"><strong>8+</strong><span>ЛЕТ ОПЫТА<br />В РАЗРАБОТКЕ</span></div>
+        <div class="hero-side-note">PHP<br />BITRIX<br />SYMFONY<br />LARAVEL</div>
+      </div>
+      <div class="hero-index">PORTFOLIO — 2026 <span>01 / 06</span></div>
+    </section>
+
+    <section class="tech-strip" aria-label="Основные технологии">
+      <span class="strip-label">ТЕХНОЛОГИИ</span>
+      {["PHP 8", "SYMFONY", "LARAVEL", "BITRIX", "MYSQL", "POSTGRESQL", "DOCKER", "GIT"].map((item) => <span>{item}</span>)}
+    </section>
+
+    <section class="about section-shell section-grid" id="about" data-reveal>
+      <div class="section-heading"><span class="section-number">/ 01</span><h2>Обо мне</h2></div>
+      <div class="about-copy">
+        <p class="lead">PHP-разработчик с опытом более 8 лет в веб-разработке. Специализируюсь на backend-разработке, интеграциях и поддержке сложных проектов.</p>
+        <p>Работаю с серверной бизнес-логикой, REST API, базами данных и существующими системами. Умею разбираться в legacy-коде, находить узкие места и постепенно улучшать архитектуру без остановки работающего продукта.</p>
+        <a class="underlined-link" href="#experience">Мой профессиональный путь <span>↗</span></a>
+      </div>
+      <div class="about-index"><span>FOCUS</span><strong>BACKEND<br />& SYSTEMS</strong><i>EST. 2015</i></div>
+    </section>
+
+    <section class="projects section-shell section-grid" id="projects" data-reveal>
+      <div class="section-heading"><span class="section-number">/ 02</span><h2>Избранные<br />проекты</h2><p>Практика, решения<br />и инженерный подход.</p></div>
+      <div class="project-placeholder">
+        <div class="project-placeholder-art"><span>PROJECTS</span><span>COMING<br />SOON</span></div>
+        <div class="project-placeholder-caption"><strong>Здесь будут твои проекты</strong><span>Добавим GitHub-репозитории и реальные кейсы, когда ты их пришлёшь.</span></div>
+      </div>
+    </section>
+
+    <section class="experience section-shell section-grid" id="experience" data-reveal>
+      <div class="section-heading"><span class="section-number">/ 03</span><h2>Опыт работы</h2><p>Профессиональный<br />путь с 2015 года.</p></div>
+      <div class="timeline">
+        {resume.experienceItems.map((job, index) => (
+          <article class="timeline-item">
+            <span class="timeline-count">0{index + 1}</span>
+            <div class="timeline-main">
+              <div class="timeline-title"><h3>{job.company}</h3><span>{job.period}</span></div>
+              <p class="job-role">{job.role}</p>
+              <p class="job-description">{job.description}</p>
+              <div class="tag-list">{job.stack.map((tag) => <span>{tag}</span>)}</div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="skills section-shell section-grid" id="skills" data-reveal>
+      <div class="section-heading"><span class="section-number">/ 04</span><h2>Компетенции</h2><p>Инструменты и технологии<br />в ежедневной работе.</p></div>
+      <div class="skill-groups">
+        {resume.skills.map((group, index) => (
+          <div class="skill-group">
+            <span class="skill-number">0{index + 1}</span>
+            <h3>{group.title}</h3>
+            <div class="tag-list">{group.items.map((item) => <span>{item}</span>)}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="education section-shell section-grid" id="education" data-reveal>
+      <div class="section-heading"><span class="section-number">/ 05</span><h2>Образование</h2></div>
+      <div class="education-content">
+        {resume.education.map((item) => (
+          <div class="education-item"><span>{item.year}</span><div><h3>{item.institution}</h3><p>{item.detail}</p></div></div>
+        ))}
+        <div class="education-item"><span>2020</span><div><h3>Сертификат 1С-Битрикс</h3><p>Профессиональная сертификация</p></div></div>
+      </div>
+    </section>
+
+    <section class="contact section-shell section-grid" id="contact" data-reveal>
+      <div class="section-heading"><span class="section-number">/ 06</span><h2>Давайте<br />обсудим задачу</h2></div>
+      <div class="contact-content">
+        <p class="lead">Открыт к интересным backend-проектам, интеграциям и сотрудничеству.</p>
+        <div class="contact-links">
+          <a href={resume.contacts.telegram} target="_blank" rel="noreferrer"><span>TELEGRAM</span><strong>@emilayupov</strong><i>↗</i></a>
+          <a href={`mailto:${resume.contacts.email}`}><span>EMAIL</span><strong>{resume.contacts.email}</strong><i>↗</i></a>
+          <a href={resume.contacts.setka} target="_blank" rel="noreferrer"><span>SETKA</span><strong>Профиль</strong><i>↗</i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="wordmark" href="#top">/emil.dev</a>
+    <span>Emil Ayupov · PHP Backend Developer</span>
+    <a href="#top">НАВЕРХ ↑</a>
+  </footer>
+</MainLayout>
