@@ -52,12 +52,51 @@ import { resume } from "../data/resume";
     </section>
 
     <section class="projects section-shell section-grid" id="projects" data-reveal>
-      <div class="section-heading"><span class="section-number">/ 02</span><h2>Избранные<br />проекты</h2><p>Практика, решения<br />и инженерный подход.</p></div>
-      <div class="project-placeholder">
-        <div class="project-placeholder-art"><span>PROJECTS</span><span>COMING<br />SOON</span></div>
-        <div class="project-placeholder-caption"><strong>Здесь будут твои проекты</strong><span>Добавим GitHub-репозитории и реальные кейсы, когда ты их пришлёшь.</span></div>
-      </div>
-    </section>
+          <div class="section-heading"><span class="section-number">/ 02</span><h2>Избранные<br />проекты</h2><p>Практика, решения<br />и инженерный подход.</p></div>
+          <div class="project-list">
+            <article class="project-card">
+              <div class="project-card-top">
+                <span class="project-card-index">01 / PERSONAL PROJECT</span>
+                <span class="project-card-status">CASE IN PROGRESS</span>
+              </div>
+              <div class="project-card-body">
+                <span class="project-card-mark">TT</span>
+                <div>
+                  <h3>Task Tracker</h3>
+                  <p>A RESTful Task Management API built with Python and FastAPI.
+                  A backend project focused on developing and testing a task management REST API, with an emphasis on code quality, test automation, type safety, and CI/CD practices.</p>
+                  <br>
+                  <p>
+                      Features
+                      REST API — CRUD operations for task management.
+                      Data validation — request and response validation with Pydantic v2.
+                      Database integration — SQLite with SQLAlchemy 2.0.
+                      Automated testing — API and database tests using Pytest and HTTPX.
+                      Negative testing — validation errors, invalid requests, and edge cases.
+                      Test reporting — detailed Allure reports.
+                      Code quality — Ruff linting and formatting.
+                      Static type checking — BasedPyright.
+                      Code coverage — pytest-cov with a 100% coverage threshold.
+                      Containerization — Docker and Docker Compose.
+                      CI/CD — automated checks with GitHub Actions.
+                      Quality Gate — local quality checks and Git pre-commit hook.
+                  </p>
+                  <br>
+                </div>
+                <a href="https://github.com/EmilAyupov/task-tracker" target="_blank" rel="noreferrer" aria-label="Открыть Task Tracker на GitHub">↗</a>
+              </div>
+              <div class="project-card-bottom">
+                <span>GITHUB REPOSITORY</span>
+                <span>DETAILS COMING SOON</span>
+              </div>
+            </article>
+            <!-- <div class="project-add-placeholder">
+              <span>02 — 03</span>
+              <strong>Ещё проекты<br />добавим позже</strong>
+              <i>MORE CASES TO COME</i>
+            </div> -->
+          </div>
+        </section>
 
     <section class="experience section-shell section-grid" id="experience" data-reveal>
       <div class="section-heading"><span class="section-number">/ 03</span><h2>Опыт работы</h2><p>Профессиональный<br />путь с 2015 года.</p></div>
